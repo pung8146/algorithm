@@ -12,11 +12,22 @@
 
 // 출력
 // 첫째 줄에 입력에서 주어진 순서대로 몇 개의 피스를 더하거나 빼야 되는지를 출력한다. 만약 수가 양수라면 동혁이는 그 개수 만큼 피스를 더해야 하는 것이고, 음수라면 제거해야 하는 것이다.
-const fs = require('fs');
-const input = fs.readFileSync('/dev/stdin').toString();
+const fs = require("fs");
+const input = fs
+  .readFileSync("/dev/stdin")
+  .toString()
+  .split("")
+  .map((el) => Number(el));
 
-let arr = [input[0] , input[1], input[2], input[3], input[4],input[5]]
-let newArr = [];
+// 내가 작성한 코드
+// let arr1 = [input[0], input[1], input[2], input[3], input[4], input[5]];
+// let newArr1 = [input[0], input[1], input[2], input[3], input[4], input[5]];
 
-if(input[0] )
-console.log(`${input}??!`)
+// if (arr1.input[0] !== 2) {
+// } else {
+//   newArr1.input[0] = 0;
+// }
+// 레퍼런스코드
+let origin = [1, 1, 2, 2, 2, 8];
+let result = origin.map((el, idx) => el - input[idx]);
+console.log(result.join(""));
